@@ -38,7 +38,11 @@ public class DetailActivity extends AppCompatActivity {
         if (intent != null) {
             int image = intent.getIntExtra(ChangeBackgroundActivity.IMAGE_DETAIL, -1);
             if (image != -1) {
-                Picasso.with(this).load(image).into(imageView);
+                Picasso.with(this)
+                        .load(image)
+                        .fit()
+                        .centerCrop()
+                        .into(imageView);
             } else {
                 Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show();
             }

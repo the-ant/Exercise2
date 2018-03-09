@@ -56,6 +56,7 @@ public class ChangeTitleActivity extends AppCompatActivity {
         if (intent != null) {
             String content = intent.getStringExtra(MainActivity.TITLE_CONTENT);
             int color = intent.getIntExtra(MainActivity.TITLE_COLOR, -1);
+            colorResult = color;
 
             if (!content.isEmpty()) {
                 edtTitle.setText(content);

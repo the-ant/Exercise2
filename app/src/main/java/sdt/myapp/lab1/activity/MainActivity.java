@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         getSupportActionBar().setTitle("MainActivity");
-
         tvTitle.setText(titleDefault);
         tvTitle.setTextColor(colorDefault);
         currentTitleColor = colorDefault;
@@ -82,7 +81,11 @@ public class MainActivity extends AppCompatActivity {
         } else if (requestCode == REQUEST_CHANGE_BACKGROUND_CODE && resultCode == RESULT_OK) {
             int image = data.getIntExtra(ChangeBackgroundActivity.IMAGE_CHOSE, -1);
             if (image != -1) {
-                Picasso.with(this).load(image).into(imgBackground);
+                Picasso.with(this)
+                        .load(image)
+                        .fit()
+                        .centerCrop()
+                        .into(imgBackground);
             } else {
                 Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show();
             }

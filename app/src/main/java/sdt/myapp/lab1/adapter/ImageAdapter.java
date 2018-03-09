@@ -44,7 +44,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         int image = listItems.get(position);
-        Picasso.with(context).load(image).into(holder.imageView);
+        Picasso.with(context).
+                load(image)
+                .fit()
+                .centerCrop()
+                .into(holder.imageView);
         holder.imageView.setOnClickListener(v -> {
             listener.onItemClick(image);
         });
