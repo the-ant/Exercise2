@@ -10,6 +10,7 @@
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         tools:background="@drawable/choose_background"
         tools:src="@drawable/img_3" />
